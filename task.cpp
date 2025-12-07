@@ -54,8 +54,18 @@ int main()
     {
     draw(*ml);
     std::cout << "\n";
+    Planar * figure = nullptr;
+    figure = max_area(pls, s);
+    draw(figure);
+    std::cout << "\n";
+    Planar ** array = nullptr;
+    array = max_crossing(pls, s);
+    draw(array[0]);
+    std::cout << "\n";
+    draw(array[1]);
     free_planars(pls, s);
     delete [] pls;
+    delete [] array;
     }
   }
 }

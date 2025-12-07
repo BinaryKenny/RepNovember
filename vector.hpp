@@ -1,6 +1,7 @@
 #ifndef VECTOR_HPP
 #define VECTOR_HPP
 #include <cmath>
+#include <algorithm>
 #include "planar.hpp"
 #include "point.hpp"
 #include "frame_t.hpp"

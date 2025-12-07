@@ -28,5 +28,13 @@ double Vector::area() const
 
 frame_t Vector::frame() const
 {
-      return frame_t(data[0].x(), data[0].y(), data[1].x(), data[1].y());
+  int left_x = 0;
+  int right_x = 0;
+  int upper_y = 0;
+  int lower_y = 0;
+  left_x = std::min(data[0].x(), data[1].x());
+  lower_y = std::min(data[0].y(), data[1].y());
+  right_x = std::max(data[0].x(), data[1].x());
+  upper_y = std::max(data[0].y(), data[1].y());
+  return frame_t(left_x, lower_y, right_x, upper_y);
 }
