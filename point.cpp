@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 #include "point.hpp"
 
 Point::Point(int xx, int yy):
@@ -17,5 +18,5 @@ int Point::y() const
 
 int Point::abs_sqr() const
 {
-  return x() * x() + y() * y();
+  return std::sqrt(x() * x() + y() * y());
 }
