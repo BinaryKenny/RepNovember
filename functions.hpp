@@ -4,11 +4,14 @@
 #include "planar.hpp"
 #include "point.hpp"
 #include "vector.hpp"
+#include "triangle.hpp"
 
 Planar * make(std::istream & is);
 Planar ** most_left(Planar ** pls, size_t k);
 Planar * make(size_t id);
 void draw(Planar * pl);
+void draw(Triangle * pls);
 void free_planars(Planar ** pls, size_t k);
+Planar * max_area(Planar ** pls, size_t k);
 
 #endif

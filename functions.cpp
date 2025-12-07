@@ -14,6 +14,11 @@ void draw(Planar * pls)
   std::cout << pls->y() << "\n";
 }
 
+void draw(Triangle * pls)
+{
+  std::cout << pls->a() << " " << pls->b() << " " << pls->c();
+}
+
 Planar ** most_left(Planar ** pls, size_t k)
 {
   if (!k)
@@ -71,4 +76,21 @@ Planar * make(std::istream & is)
     throw std::logic_error("Bad cmd");
   }
   return nullptr;
+}
+Planar * max_area(Planar ** pls, size_t k)
+{
+  size_t index = 0;
+  double max_area = 0;
+  for (size_t i = 0; i < k; i++)
+  {
+    max_area = std::max(max_area, pls[i]->area());
+  }
+  for (size_t i = 0; i < k; i++)
+  {
+    if (max_area == pls[i]->area())
+    {
+      index = i;
+    }
+  }
+  return pls[index];
 }
